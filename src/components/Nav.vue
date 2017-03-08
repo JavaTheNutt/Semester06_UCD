@@ -13,7 +13,6 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<router-link tag="li" to="/references"><a>References</a></router-link>
-					<router-link tag="li" to="/bar"><a>Bar</a></router-link>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div><!--/.container-fluid -->
