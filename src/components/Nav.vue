@@ -12,10 +12,8 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<router-link tag="li" to="/foo"><a>Foo</a></router-link>
+					<router-link tag="li" to="/references"><a>References</a></router-link>
 					<router-link tag="li" to="/bar"><a>Bar</a></router-link>
-					<!--<li><router-link to="/foo">Foo</router-link></li>
-					<li><router-link to="/bar">Bar</router-link></li>-->
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div><!--/.container-fluid -->
@@ -26,3 +24,8 @@
 	    name: 'navBar'
 	}
 </script>
+<style scoped>
+	/*.navbar a{
+		font-size: 2.5rem;
+	}*/
+</style>
