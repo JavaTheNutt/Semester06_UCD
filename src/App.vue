@@ -3,16 +3,18 @@
 		<component is="navBar"></component>
 
 		<router-view></router-view>
-
+		<component is="stickyFooter"></component>
 	</div>
 </template>
 
 <script>
     import NavBar from './components/Nav.vue';
+    import StickyFooter from './components/Footer.vue';
     export default {
         name: 'app',
         components: {
-            'navBar': NavBar
+            'navBar': NavBar,
+			'stickyFooter': StickyFooter
         }
     }
 </script>
@@ -28,6 +30,7 @@
 		border: solid black 1px;
 		border-radius: 15px;
 		background-color: white;
+		margin-top: 100px;
 	}
 
 	.centerHeader {
