@@ -34,6 +34,10 @@ module.exports = {
             {
                 test: /\.html$/,
                 loader: 'html-loader'
+            },
+            {
+                test: /\.css$/,
+                loader: 'css-loader'
             }
         ]
     },
@@ -52,8 +56,10 @@ module.exports = {
     devtool: '#eval-source-map',
     plugins:[
         new HtmlWebpackPlugin({
-            template: 'index.html'
-        })
+            template: 'index.html',
+            favicon: 'favicon.ico'
+        }),
+        new webpack.NamedModulesPlugin()
     ]
 };
 
@@ -75,5 +81,6 @@ if (process.env.NODE_ENV === 'production') {
                                                                        new webpack.LoaderOptionsPlugin({
                                                                            minimize: true
                                                                        })
+
                                                                    ])
 }

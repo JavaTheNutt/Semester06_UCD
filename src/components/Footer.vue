@@ -28,4 +28,8 @@
 		color: white;
 		margin-top: 10px;
 	}
+	nav.navbar-fixed-bottom{
+		margin-top: 30px;
+	}
+
 </style>
