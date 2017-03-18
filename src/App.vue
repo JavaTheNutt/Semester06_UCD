@@ -15,6 +15,8 @@
     import StickyFooter from './components/Footer.vue';
     import DisplayResults from './components/DisplayResults.vue';
 	import UnderConstruction from './components/UnderConstruction.vue';
+	const img = document.createElement('img');
+	img.src = require('./assets/under-construction-sign.jpg');
 
     export default {
         name: 'app',

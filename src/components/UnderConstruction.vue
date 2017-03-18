@@ -6,13 +6,14 @@
 			<div id="outerContainer">
 				<button class="btn btn-sm btn-default close" @click="hideImg()"><i class="fa fa-close"></i>
 				</button>
-				<img src="/src/assets/under-construction-sign.jpg" alt="under construction" id="warningImage">
+				<img src="/assets/under-construction-sign.jpg" alt="under construction" id="warningImage">
 			</div>
 		</div>
 	</transition>
 </template>
 <script>
 	import {mapState} from 'vuex';
+
     export default{
         name: 'underConstruction',
 		methods:{
