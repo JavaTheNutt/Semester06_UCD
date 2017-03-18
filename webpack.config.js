@@ -1,12 +1,13 @@
 const path    = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: 'build[hash].js'
+        filename: 'build_[hash].js'
     },
     module: {
         rules: [
@@ -36,7 +37,10 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: 'css-loader'
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: 'css-loader'
+                                               })
             }
         ]
     },
@@ -58,7 +62,8 @@ module.exports = {
             template: 'index.html',
             favicon: 'favicon.ico'
         }),
-        new webpack.NamedModulesPlugin()
+        new webpack.NamedModulesPlugin(),
+        new ExtractTextPlugin("styles_[contenthash].css")
     ]
 };
 
