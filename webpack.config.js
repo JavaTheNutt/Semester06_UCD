@@ -4,10 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: './src/main.js',
+    entry: {
+        app: './src/main.js',
+        vendor: './src/vendor.js'
+    },
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: 'build_[hash].js'
+        filename: 'bundle_[hash].js'
     },
     module: {
         rules: [
@@ -63,7 +66,8 @@ module.exports = {
             favicon: 'favicon.ico'
         }),
         new webpack.NamedModulesPlugin(),
-        new ExtractTextPlugin("styles_[contenthash].css")
+        new ExtractTextPlugin("styles_[contenthash].css"),
+        new webpack.optimize.CommonsChunkPlugin({name:"vendor", filename:"vendor.bundle_[hash].js"})
     ]
 };
 

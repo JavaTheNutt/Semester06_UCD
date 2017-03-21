@@ -1,4 +1,3 @@
-<script src="services/FetchFromWikipedia.js"></script>
 <template>
 	<div id="app">
 		<component is="navBar"></component>

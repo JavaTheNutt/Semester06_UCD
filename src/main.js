@@ -7,6 +7,7 @@ import router from './routes'
 import store from './store';
 import Logger from './service/Logger';
 require('vue-animate/dist/vue-animate.min.css');
+require('./vendor');
 
 Vue.use(Logger);
 const app = new Vue({
