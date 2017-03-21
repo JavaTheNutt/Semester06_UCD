@@ -1,12 +1,11 @@
-const path    = require('path');
-const webpack = require('webpack');
+const path              = require('path');
+const webpack           = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
         app: './src/main.js',
-        vendor: './src/vendor.js'
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -41,8 +40,8 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: 'css-loader'
+                                                   fallback: 'style-loader',
+                                                   use: 'css-loader'
                                                })
             }
         ]
@@ -60,35 +59,43 @@ module.exports = {
         hints: false
     },
     devtool: '#eval-source-map',
-    plugins:[
+    plugins: [
         new HtmlWebpackPlugin({
-            template: 'index.html',
-            favicon: 'favicon.ico'
-        }),
+                                  template: 'index.html',
+                                  favicon: 'favicon.ico'
+                              }),
         new webpack.NamedModulesPlugin(),
-        new ExtractTextPlugin("styles_[contenthash].css"),
-        new webpack.optimize.CommonsChunkPlugin({name:"vendor", filename:"vendor.bundle_[hash].js"})
+        new ExtractTextPlugin(
+            "styles_[contenthash].css"),
     ]
 };
 
 if (process.env.NODE_ENV === 'production') {
-    module.exports.devtool = '#source-map';
+    module.exports.devtool      = '#source-map';
+    module.exports.output       = {
+        path: path.resolve(__dirname, './dist'),
+        filename: 'bundle_[chunkhash].js'
+    };
+    module.exports.entry.vendor = './src/vendor.js';
     // http://vue-loader.vuejs.org/en/workflow/production.html
-    module.exports.plugins = (module.exports.plugins || []).concat([
-                                                                       new webpack.DefinePlugin({
-                                                                           'process.env': {
-                                                                               NODE_ENV: '"production"'
-                                                                           }
-                                                                       }),
-                                                                       new webpack.optimize.UglifyJsPlugin({
-                                                                           sourceMap: true,
-                                                                           compress: {
-                                                                               warnings: false
-                                                                           }
-                                                                       }),
-                                                                       new webpack.LoaderOptionsPlugin({
-                                                                           minimize: true
-                                                                       })
-
-                                                                   ])
+    module.exports.plugins      = (module.exports.plugins || []).concat([
+                                                                            new webpack.DefinePlugin({
+                                                                                                         'process.env': {
+                                                                                                             NODE_ENV: '"production"'
+                                                                                                         }
+                                                                                                     }),
+                                                                            new webpack.optimize.UglifyJsPlugin({
+                                                                                                                    sourceMap: true,
+                                                                                                                    compress: {
+                                                                                                                        warnings: false
+                                                                                                                    }
+                                                                                                                }),
+                                                                            new webpack.LoaderOptionsPlugin({
+                                                                                                                minimize: true
+                                                                                                            }),
+                                                                            new webpack.optimize.CommonsChunkPlugin({
+                                                                                                                        name: "vendor",
+                                                                                                                        filename: "vendor.bundle_[chunkhash].js"
+                                                                                                                    })
+                                                                        ])
 }
