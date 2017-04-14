@@ -13,26 +13,6 @@ const store = new Vuex.Store({
     },
     actions: {
         RETRIEVE_ARTICLES: function ({commit}, searchTerm) {
-            /*axios.get('https://en.wikipedia.org/w/api.php', {
-             params:{
-             action: 'query',
-             srsearch: searchTerm,
-             list: 'search',
-             format: 'json'
-             },
-             headers:{
-             'Access-Control-Allow-Origin': true
-             }
-             }).then((response) => {
-             'use strict';
-             console.log(response);
-             commit('SET_ARTICLE_LIST', {
-             list: response.data
-             })
-             }).catch((error) => {
-             'use strict';
-             console.log(error);
-             })*/
             console.log('retrieving data for: ', searchTerm);
 
             return new Promise((resolve, reject) => {
