@@ -1,5 +1,5 @@
 import * as types from '../mutation_types';
-const _ = require("lodash");
+import _ from 'lodash';
 
 const state   = {
     articles: [],
