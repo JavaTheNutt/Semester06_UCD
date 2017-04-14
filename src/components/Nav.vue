@@ -9,7 +9,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<router-link to="/" class="navbar-brand"><i class="fa fa-home"></i></router-link>
+				<router-link to="/" class="navbar-brand"><i class="fa fa-home"></i><span class="sr-only">home</span></router-link>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -65,11 +65,11 @@
 	}
 
 	.navbar-header {
-		font-size: 1.3em;
+		font-size: 1em;
 	}
 
 	.nav {
-		font-size: 1.3em;
+		font-size: 1em;
 	}
 
 	@media (max-width: 768px) {
