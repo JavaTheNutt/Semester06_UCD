@@ -1,10 +1,10 @@
 <template>
 	<transition
-	name="hideUnderConstruction"
-	leave-active-class="animated fade">
+			name="hideUnderConstruction"
+			leave-active-class="animated fade">
 		<div class="text-center" v-if="showUnderConstruction">
 			<div id="outerContainer">
-				<button class="btn btn-sm btn-default close" @click="HIDE_CONSTRUCTION"><i class="fa fa-close"></i>
+				<button class="btn btn-sm btn-default close" @click="hideConstruction"><i class="fa fa-close"></i>
 				</button>
 				<img src="/assets/under-construction-sign.jpg" alt="under construction" id="warningImage">
 			</div>
@@ -12,12 +12,17 @@
 	</transition>
 </template>
 <script>
-	import {mapState, mapActions} from 'vuex';
-    export default{
-        name: 'underConstruction',
-		methods: mapActions(['HIDE_CONSTRUCTION']),
-		computed: mapState(['showUnderConstruction'])
-    }
+	import {mapGetters, mapActions} from 'vuex';
+	export default{
+		name: 'underConstruction',
+		methods: mapActions(['hideConstruction']),
+		computed: mapGetters({
+			                     showUnderConstruction: 'showConstruction'
+		                     }),
+		created(){
+			this.$log.debug("under construction component created. ", this.showUnderConstruction);
+		}
+	}
 </script>
 <style>
 	#outerContainer {

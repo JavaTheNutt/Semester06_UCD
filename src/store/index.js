@@ -2,16 +2,22 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import jsonp from 'jsonp';
 import _ from 'lodash';
+import wikiSearch from './modules/WikiSearch'
+import toggleConstruction from './modules/ToggleConstruction';
 
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-    state: {
+	modules:{
+		wikiSearch,
+		toggleConstruction
+	}
+    /*state: {
         articles: [],
         showArticles: false,
         showUnderConstruction: true
-    },
-    actions: {
+    },*/
+    /*actions: {
         RETRIEVE_ARTICLES: function ({commit}, searchTerm) {
             console.log('retrieving data for: ', searchTerm);
 
@@ -63,7 +69,7 @@ const store = new Vuex.Store({
             state.showUnderConstruction = showConstruction;
         }
     },
-    getters: {}
+    getters: {}*/
 });
 export default store;
 function convertResult(results) {

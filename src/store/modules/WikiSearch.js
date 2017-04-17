@@ -1,3 +1,4 @@
+'use strict';
 import * as types from '../mutation_types';
 import _ from 'lodash';
 
@@ -7,7 +8,6 @@ const state   = {
 };
 const actions = {
     retrieveArticles({commit, searchTerm}){
-        'use strict';
         console.log('retrieving data for: ', searchTerm);
         return new Promise((resolve, reject) => {
             jsonp(
@@ -40,11 +40,9 @@ const actions = {
 };
 const mutations = {
     [types.SET_SHOW_ARTICLES](state, {showArticles}){
-        'use strict';
         state.showArticles = showArticles;
     },
     [types.SET_ARTICLE_LIST](state, {list}){
-        'use strict';
         state.articles = convertResult(list);
     }
 };
@@ -59,7 +57,6 @@ export default {
 
 
 function convertResult(results) {
-    'use strict';
     return _.map(results).map((result) => {
         console.log('current result:', result);
         return _.assign(result, {
@@ -70,7 +67,6 @@ function convertResult(results) {
 }
 
 function convertText(text) {
-    'use strict';
     console.log('converting:', text);
     const textArea     = document.createElement("textarea");
     textArea.innerHTML = text;

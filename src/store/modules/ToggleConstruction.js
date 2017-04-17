@@ -1,21 +1,21 @@
+'use strict';
 import * as types from '../mutation_types';
-const state = {
-    showUnderConstruction: true
+const state     = {
+	showUnderConstruction: true
 };
-const actions = {
-    hideConstruction({commit}){
-        'use strict';
-        commit(types.SET_SHOW_CONSTRUCTION);
-    }
+const getters   = {
+	showConstruction: state => state.showUnderConstruction
+};
+const actions   = {
+	hideConstruction({commit}){
+		commit(types.SET_SHOW_CONSTRUCTION, false);
+	}
 };
 const mutations = {
-    [types.SET_SHOW_CONSTRUCTION](state, {showConstruction}){
-        'use strict';
-        state.showUnderConstruction = showConstruction;
-    }
+	[types.SET_SHOW_CONSTRUCTION](state, {showConstruction}){
+		state.showUnderConstruction = showConstruction;
+	}
 };
 export default {
-    state,
-    actions,
-    mutations
+	state, getters, actions, mutations
 }
