@@ -4,7 +4,7 @@
 		<component is="displayResults"></component>
 		<component is="underConstruction"></component>
 
-		<router-view></router-view>
+		<component is="main-section"></component>
 		<component is="stickyFooter"></component>
 	</div>
 </template>
@@ -14,6 +14,7 @@
     import StickyFooter from './components/Footer.vue';
     import DisplayResults from './components/DisplayResults.vue';
 	import UnderConstruction from './components/UnderConstruction.vue';
+	import MainSection from './components/MainSection.vue';
 	const img = document.createElement('img');
 	img.src = require('./assets/under-construction-sign.jpg');
 
@@ -23,12 +24,8 @@
             'navBar': NavBar,
 			'stickyFooter': StickyFooter,
 			'displayResults': DisplayResults,
-			'underConstruction': UnderConstruction
-        },
-		data:function () {
-			return {
-                showModal: false
-            }
+			'underConstruction': UnderConstruction,
+			'main-section': MainSection
         }
     }
 </script>

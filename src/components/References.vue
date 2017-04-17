@@ -1,6 +1,5 @@
 <template>
-	<div class="container bodyContainer"
-		 v-bind:class="{noConstruction : !showUnderConstruction, construction: showUnderConstruction}">
+	<div class="container bodyContainer">
 		<h1 class="centerHeader">References</h1>
 		<p class="text-center">The purpose of this page is to display the references for resources that were used in the building of this
 			website. Of course it is not possible to mention every package, plugin and library used in building this

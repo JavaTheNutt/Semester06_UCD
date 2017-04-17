@@ -1,6 +1,5 @@
 <template>
-	<div class="container bodyContainer"
-		 v-bind:class="{noConstruction : !showUnderConstruction, construction: showUnderConstruction}">
+	<div class="container bodyContainer">
 		<h1 class="text-center">Welcome to my Website!</h1>
 		<p>
 			I created this website as part of my Year Three college project for my User Centred Design module. The
