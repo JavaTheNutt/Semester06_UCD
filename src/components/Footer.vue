@@ -19,16 +19,17 @@
 	</nav>
 </template>
 <script>
-    export default{
-        name: 'footer'
-    }
+	export default{
+		name: 'footer'
+	}
 </script>
 <style>
 	#footerText {
 		color: white;
 		margin-top: 10px;
 	}
-	nav.navbar-fixed-bottom{
+
+	nav.navbar-fixed-bottom {
 		margin-top: 30px;
 	}
 

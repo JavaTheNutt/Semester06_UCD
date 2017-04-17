@@ -20,8 +20,8 @@
 			'navigation-sidebar': NavigationSidebar
 		},
 		computed: mapGetters({
-			                     showUnderConstruction: 'showConstruction'
-		                     })
+			showUnderConstruction: 'showConstruction'
+		})
 	}
 </script>
 <style scoped>

@@ -15,26 +15,25 @@ const actions   = {
 	retrieveArticles({commit}, searchTerm){
 		console.log('retrieving data for: ', searchTerm);
 		return new Promise((resolve, reject) => {
-			jsonp('https://en.wikipedia.org/w/api.php?action=query&srsearch=' + searchTerm + '&list=search&format=json',
-			      (err, data) => {
-				      'use strict';
-				      if (err) {
-					      console.log(err);
-					      reject(err);
-					      return;
-				      }
-				      console.log('data retrieved', data.query.search);
-				      const list = _.map(data.query.search, (article) => {
-					      return {
-						      url: 'https://en.wikipedia.org/wiki/' + article.title,
-						      title: article.title,
-						      snippet: article.snippet
-					      }
-				      });
-				      console.log('current list:', list);
-				      commit(types.SET_ARTICLE_LIST, {list});
-				      resolve();
-			      })
+			jsonp('https://en.wikipedia.org/w/api.php?action=query&srsearch=' + searchTerm + '&list=search&format=json', (err, data) => {
+				'use strict';
+				if (err) {
+					console.log(err);
+					reject(err);
+					return;
+				}
+				console.log('data retrieved', data.query.search);
+				const list = _.map(data.query.search, (article) => {
+					return {
+						url: 'https://en.wikipedia.org/wiki/' + article.title,
+						title: article.title,
+						snippet: article.snippet
+					}
+				});
+				console.log('current list:', list);
+				commit(types.SET_ARTICLE_LIST, {list});
+				resolve();
+			})
 		});
 
 	},

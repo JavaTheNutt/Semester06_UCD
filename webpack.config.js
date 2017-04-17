@@ -43,7 +43,11 @@ module.exports = {
                                                    fallback: 'style-loader',
                                                    use: 'css-loader'
                                                })
-            }
+            },
+	        {
+		        test: /\.jade$/,
+		        loader: 'jade-loader'
+	        }
         ]
     },
     resolve: {

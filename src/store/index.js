@@ -7,10 +7,10 @@ import sidebar from './modules/Sidebar';
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-	                             modules: {
-		                             wikiSearch,
-		                             toggleConstruction,
-		                             sidebar
-	                             }
-                             });
+	modules: {
+		wikiSearch,
+		toggleConstruction,
+		sidebar
+	}
+});
 export default store;

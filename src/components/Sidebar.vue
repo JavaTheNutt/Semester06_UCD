@@ -1,31 +1,21 @@
 <template>
-	<div class="sidebar mySidebar">
-		<ul class="nav nav-stacked" id="navSidebar">
-			<li v-for="navItem in navLinks">{{navItem.title}}</li>
+	<div class="mySidebar" v-if="sidebarShown">
+		<ul>
+			<li v-for="item in navLinks">{{item.title}}</li>
 		</ul>
 	</div>
 </template>
 <script>
+	import {mapGetters, mapState} from 'vuex';
 	export default{
 		name: 'navigation-sidebar',
-		data: function () {
-			return {
-				navLinks: [{
-					title: 'link one',
-					pos: 'test'
-				}, {
-					title: 'link two',
-					pos: 'test'
-				}, {
-					title: 'link three',
-					pos: 'test'
-				}, {
-					title: 'link four',
-					pos: 'test'
-				}, {
-					title: 'link five',
-					pos: 'test'
-				}]
+		computed: mapGetters({navLinks: 'navigationLinks', sidebarShown: 'sidebarShown'}),
+		created(){
+			this.$log.debug("sidebar created. number of navigation links: ", navLinks.length);
+		},
+		methods:{
+			countLinks:function () {
+				this.$log.debug('number of navigation links: ', navLinks.length);
 			}
 		}
 	}
@@ -33,7 +23,8 @@
 <style scoped>
 	.mySidebar {
 		border: solid black 1px;
-		border-radius: 25%;
+		border-radius: 25px;
 		background-color: aliceblue;
+		height: 100px;
 	}
 </style>

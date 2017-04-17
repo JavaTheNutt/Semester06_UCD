@@ -17,8 +17,8 @@
 		name: 'underConstruction',
 		methods: mapActions(['hideConstruction']),
 		computed: mapGetters({
-			                     showUnderConstruction: 'showConstruction'
-		                     }),
+			showUnderConstruction: 'showConstruction'
+		}),
 		created(){
 			this.$log.debug("under construction component created. ", this.showUnderConstruction);
 		}

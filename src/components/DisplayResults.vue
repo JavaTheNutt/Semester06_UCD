@@ -21,9 +21,9 @@
 	export default{
 		name: 'displayResults',
 		computed: mapGetters({
-			                     showArticles: 'articlesShown',
-			                     articles: 'allArticles'
-		                     }),
+			showArticles: 'articlesShown',
+			articles: 'allArticles'
+		}),
 		components: {
 			Carousel3d,
 			Slide

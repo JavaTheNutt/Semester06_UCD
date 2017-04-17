@@ -1,11 +1,12 @@
 <template>
 	<div class="container bodyContainer">
 		<h1 class="centerHeader">References</h1>
-		<p class="text-center">The purpose of this page is to display the references for resources that were used in the building of this
+		<p class="text-center">
+			The purpose of this page is to display the references for resources that were used in the building of this
 			website. Of course it is not possible to mention every package, plugin and library used in building this
 			site. The list below contains the most central technologies that are used. For a full list of all
 			dependencies used in this project, see the projects <a
-					href="https://github.com/JavaTheNutt/Semester06_UCD/blob/master/package.json" target="_blank">package.json</a>
+				href="https://github.com/JavaTheNutt/Semester06_UCD/blob/master/package.json" target="_blank">package.json</a>
 			file.
 		</p>
 		<div class="headerContainer">
@@ -145,28 +146,28 @@
 
 </template>
 <script>
-    import {mapState} from 'vuex';
+	import {mapState} from 'vuex';
 
-    export default{
-        name: 'references',
-        data: function () {
-            return {
-                showTech: false,
-                showResources: false,
-                showTechClasses: {
-                    slideInDown: this.showTech,
-                    slideOutUp: !this.showTech
-                }
-            }
+	export default{
+		name: 'references',
+		data: function () {
+			return {
+				showTech: false,
+				showResources: false,
+				showTechClasses: {
+					slideInDown: this.showTech,
+					slideOutUp: !this.showTech
+				}
+			}
 
-        },
-        methods: {
-            toggleShowTech: function () {
-                this.showTech = !this.showTech;
-            }
-        },
-        computed: mapState(['showUnderConstruction'])
-    }
+		},
+		methods: {
+			toggleShowTech: function () {
+				this.showTech = !this.showTech;
+			}
+		},
+		computed: mapState(['showUnderConstruction'])
+	}
 </script>
 <style>
 	.toggleShowIcon {

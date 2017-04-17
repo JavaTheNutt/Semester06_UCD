@@ -42,10 +42,18 @@
 
 </template>
 <script>
-    import {mapState} from 'vuex';
-
-    export default{
-        name: 'home',
-        computed: mapState(['showUnderConstruction'])
-    }
+	const navLinks = [{
+		title: 'Welcome',
+		id: 'welcomeHeader'
+	}, {
+		title: 'Using the search bar',
+		id: 'searchBar'
+	}];
+	export default{
+		name: 'home',
+		created(){
+			this.$log.debug('sending navigation links to sidebar. number of links', navLinks.length);
+			this.$store.dispatch('setLinks', navLinks);
+		}
+	}
 </script>

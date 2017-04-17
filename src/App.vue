@@ -10,24 +10,25 @@
 </template>
 
 <script>
-    import NavBar from './components/Nav.vue';
-    import StickyFooter from './components/Footer.vue';
-    import DisplayResults from './components/DisplayResults.vue';
+	import NavBar from './components/Nav.vue';
+	import StickyFooter from './components/Footer.vue';
+	import DisplayResults from './components/DisplayResults.vue';
 	import UnderConstruction from './components/UnderConstruction.vue';
 	import MainSection from './components/MainSection.vue';
 	const img = document.createElement('img');
 	img.src = require('./assets/under-construction-sign.jpg');
 
-    export default {
-        name: 'app',
-        components: {
-            'navBar': NavBar,
+
+	export default {
+		name: 'app',
+		components: {
+			'navBar': NavBar,
 			'stickyFooter': StickyFooter,
 			'displayResults': DisplayResults,
 			'underConstruction': UnderConstruction,
 			'main-section': MainSection
-        }
-    }
+		}
+	}
 </script>
 
 <style>
@@ -44,12 +45,15 @@
 		margin-bottom: 70px;
 		margin-top: 0;
 	}
-	.construction{
+
+	.construction {
 		margin-top: 20px;
 	}
-	.noConstruction{
+
+	.noConstruction {
 		margin-top: 100px;
 	}
+
 	.centerHeader {
 		text-align: center;
 	}
