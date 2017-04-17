@@ -9,7 +9,8 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<router-link to="/" class="navbar-brand"><i class="fa fa-home"></i><span class="sr-only">home</span></router-link>
+				<router-link to="/" class="navbar-brand"><i class="fa fa-home"></i><span class="sr-only">home</span>
+				</router-link>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -29,28 +30,29 @@
 	</nav>
 </template>
 <script>
-    export default{
-        name: 'navBar',
+	export default{
+		name: 'navBar',
+		methods: {
+			validateForm: function (e) {
+				if (this.searchTerm.length > 0) {
+					const search = this.searchTerm;
+					this.$log.debug('search term exists:', search);
+					this.$store.dispatch('retrieveArticles', search).then(() => {
+						this.$log.success('fetch articles promise resolved');
+						this.$store.dispatch('showArticles', true);
+					}).catch((err) => {
+						this.$log.error("fetch articles promise rejected. Error:", err);
+					})
+				}
+			}
+		},
+		data: function () {
+			return {
+				searchTerm: ''
+			}
+		}
+	}
 
-        methods: {
-            validateForm: function (e) {
-                if (this.searchTerm.length > 0) {
-                    this.$log.debug('search term exists:', this.searchTerm);
-                    this.$store.dispatch('retrieveArticles', this.searchTerm).then(() => {
-                        this.$log.success('fetch articles promise resolved');
-                        this.$store.dispatch('showArticles', true);
-                    }).catch((err) => {
-                        this.$log.error("fetch articles promise rejected. Error:", err);
-                    })
-                }
-            }
-        },
-        data: function () {
-            return {
-                searchTerm: ''
-            }
-        }
-    }
 </script>
 <style scoped>
 	.navbar {

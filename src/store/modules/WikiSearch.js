@@ -12,7 +12,7 @@ const getters   = {
 	articlesShown: state => state.showArticles
 };
 const actions   = {
-	retrieveArticles({commit, searchTerm}){
+	retrieveArticles({commit}, searchTerm){
 		console.log('retrieving data for: ', searchTerm);
 		return new Promise((resolve, reject) => {
 			jsonp('https://en.wikipedia.org/w/api.php?action=query&srsearch=' + searchTerm + '&list=search&format=json',
