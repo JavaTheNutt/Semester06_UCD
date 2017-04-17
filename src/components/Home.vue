@@ -1,5 +1,5 @@
 <template>
-	<div class="container bodyContainer">
+	<div class="bodyContainer">
 		<h1 class="text-center">Welcome to my Website!</h1>
 		<p>
 			I created this website as part of my Year Three college project for my User Centred Design module. The
