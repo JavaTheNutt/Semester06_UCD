@@ -31,13 +31,14 @@
 <script>
     export default{
         name: 'navBar',
+
         methods: {
             validateForm: function (e) {
                 if (this.searchTerm.length > 0) {
                     this.$log.debug('search term exists:', this.searchTerm);
-                    this.$store.dispatch('RETRIEVE_ARTICLES', this.searchTerm).then(() => {
+                    this.$store.dispatch('retrieveArticles', this.searchTerm).then(() => {
                         this.$log.success('fetch articles promise resolved');
-                        this.$store.dispatch('SHOW_ARTICLES', true);
+                        this.$store.dispatch('showArticles', true);
                     }).catch((err) => {
                         this.$log.error("fetch articles promise rejected. Error:", err);
                     })

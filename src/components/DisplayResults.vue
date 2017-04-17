@@ -16,25 +16,25 @@
 	</div>
 </template>
 <script>
-    import {mapState} from 'vuex';
-    import {Carousel3d, Slide} from 'vue-carousel-3d'
-    export default{
-        name: 'displayResults',
-        computed: mapState([
-                               'showArticles',
-                               'articles'
-                           ]),
-        components: {
-            Carousel3d,
-            Slide
-        },
-        methods: {
-            closeCarousel: function () {
-                console.log('closing carousel');
-                this.$store.dispatch('SHOW_ARTICLES', false);
-            }
-        }
-    }
+	import {mapGetters} from 'vuex';
+	import {Carousel3d, Slide} from 'vue-carousel-3d'
+	export default{
+		name: 'displayResults',
+		computed: mapGetters({
+			                     showArticles: 'articlesShown',
+			                     articles: 'allArticles'
+		                     }),
+		components: {
+			Carousel3d,
+			Slide
+		},
+		methods: {
+			closeCarousel: function () {
+				console.log('closing carousel');
+				this.$store.dispatch('showArticles', false);
+			}
+		}
+	}
 
 </script>
 <style>
