@@ -4,7 +4,7 @@
 	leave-active-class="animated fade">
 		<div class="text-center" v-if="showUnderConstruction">
 			<div id="outerContainer">
-				<button class="btn btn-sm btn-default close" @click="hideImg()"><i class="fa fa-close"></i>
+				<button class="btn btn-sm btn-default close" @click="HIDE_CONSTRUCTION"><i class="fa fa-close"></i>
 				</button>
 				<img src="/assets/under-construction-sign.jpg" alt="under construction" id="warningImage">
 			</div>
@@ -12,16 +12,11 @@
 	</transition>
 </template>
 <script>
-	import {mapState} from 'vuex';
+	import {mapState, mapActions} from 'vuex';
     export default{
         name: 'underConstruction',
-		methods:{
-            hideImg: function(){
-				this.$store.dispatch('HIDE_CONSTRUCTION');
-			}
-		},
+		methods: mapActions(['HIDE_CONSTRUCTION']),
 		computed: mapState(['showUnderConstruction'])
-
     }
 </script>
 <style>
