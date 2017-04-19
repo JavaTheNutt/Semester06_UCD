@@ -15,6 +15,7 @@
 	import DisplayResults from './components/DisplayResults.vue';
 	import UnderConstruction from './components/UnderConstruction.vue';
 	import MainSection from './components/MainSection.vue';
+
 	const img = document.createElement('img');
 	img.src = require('./assets/under-construction-sign.jpg');
 

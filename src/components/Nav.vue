@@ -15,6 +15,7 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<router-link tag="li" to="/references"><a>References</a></router-link>
+					<router-link to="/internet/beginning" tag="li"><a>History of the Internet</a></router-link>
 				</ul>
 				<div class="navbar-right navbarForm">
 					<form class="form-inline" @submit.prevent="validateForm">

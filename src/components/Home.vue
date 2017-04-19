@@ -42,6 +42,7 @@
 
 </template>
 <script>
+	import bus from '../service/Bus';
 	const navLinks = [{
 		title: 'Welcome',
 		id: 'welcomeHeader'
@@ -51,9 +52,13 @@
 	}];
 	export default{
 		name: 'home',
+		data(){
+			return {
+				scrollPos: 0
+			}
+		},
 		created(){
-			this.$log.debug('sending navigation links to sidebar. number of links', navLinks.length);
-			this.$store.dispatch('setLinks', navLinks);
+			bus.$emit('set-nav-links', null);
 		}
 	}
 </script>

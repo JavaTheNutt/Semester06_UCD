@@ -1,5 +1,5 @@
 <template>
-	<div class="container bodyContainer">
+	<div class="bodyContainer">
 		<h1 class="centerHeader">References</h1>
 		<p class="text-center">
 			The purpose of this page is to display the references for resources that were used in the building of this
@@ -147,10 +147,18 @@
 </template>
 <script>
 	import {mapState} from 'vuex';
-
+	import bus from '../service/Bus';
+	const navLinks = [{
+		title: 'Technologies',
+		id: 'techHeader',
+		sublinks: [{
+			title: 'Vue.js',
+			id: 'vueHeader'
+		}]
+	}];
 	export default{
 		name: 'references',
-		data: function () {
+		data() {
 			return {
 				showTech: false,
 				showResources: false,
@@ -166,7 +174,10 @@
 				this.showTech = !this.showTech;
 			}
 		},
-		computed: mapState(['showUnderConstruction'])
+		computed: mapState(['showUnderConstruction']),
+		created(){
+			bus.$emit('set-nav-links', null);
+		}
 	}
 </script>
 <style>

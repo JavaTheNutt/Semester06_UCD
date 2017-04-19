@@ -1,22 +1,29 @@
 <template>
 	<div class="mySidebar" v-if="sidebarShown">
 		<ul>
-			<li v-for="item in navLinks">{{item.title}}</li>
+			<router-link :to="{path: '/'+ navLink.refPath}" v-for="navLink in navLinks" :key="navLink.refPath" tag="li">
+				<a>{{navLink.title}}</a></router-link>
 		</ul>
 	</div>
 </template>
 <script>
 	import {mapGetters, mapState} from 'vuex';
+	import bus from '../service/Bus';
 	export default{
 		name: 'navigation-sidebar',
-		computed: mapGetters({navLinks: 'navigationLinks', sidebarShown: 'sidebarShown'}),
-		created(){
-			this.$log.debug("sidebar created. number of navigation links: ", navLinks.length);
-		},
-		methods:{
-			countLinks:function () {
-				this.$log.debug('number of navigation links: ', navLinks.length);
+		data: function () {
+			return {
+				sidebarShown: false,
+				navLinks: [],
+				scrollPos: 0
 			}
+		},
+		created(){
+			bus.$on('set-nav-links', (links) => {
+				this.$log.debug('setting navigation links', links);
+				this.navLinks     = links;
+				this.sidebarShown = links !== null;
+			});
 		}
 	}
 </script>

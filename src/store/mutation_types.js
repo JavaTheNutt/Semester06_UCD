@@ -2,4 +2,4 @@ export const SET_SHOW_ARTICLES     = 'SET_SHOW_ARTICLES';
 export const SET_ARTICLE_LIST      = 'SET_ARTICLE_LIST';
 export const SET_SHOW_CONSTRUCTION = 'SET_SHOW_CONSTRUCTION';
 export const SET_NAV_LINKS         = 'SET_NAV_LINKS';
-export const SET_SIDEBAR_SHOWN = 'SET_SIDEBAR_SHOWN';
+export const SET_SIDEBAR_SHOWN     = 'SET_SIDEBAR_SHOWN';
