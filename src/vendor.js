@@ -5,4 +5,4 @@ import $ from 'jquery';
 import _ from 'lodash';
 import Router from 'vue-router';
 import jsonp from 'jsonp';
-import Animate from 'vue-animate';
+

@@ -31,11 +31,14 @@
 		computed: mapGetters({
 			showUnderConstruction: 'showConstruction'
 		}),
+		watch:{
+			'$route'(){ this.navLinksManuallyShown = true}
+		},
 		data() {
 			return {
 				showNav: false,
 				hasNavLinks: false,
-				navLinksManuallyShown: true,
+				navLinksManuallyShown: false,
 				toggleNavLabel: 'Show'
 			}
 		},
@@ -49,7 +52,7 @@
 			screenResize(isInitial){
 				let showNav = this.$mq.above(this.$mv.sm);
 				if (isInitial) {
-					this.navLinksManuallyShown = showNav;
+					this.navLinksManuallyShown = false;
 				}
 				this.$log.debug('resize listener called for main section');
 				this.showNav = showNav;
@@ -150,7 +153,5 @@
 			margin-right: 0;
 		}
 	}
-	.content-section{
-		padding: 15px;
-	}
+
 </style>

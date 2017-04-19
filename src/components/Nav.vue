@@ -3,7 +3,7 @@
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-						aria-expanded="false" aria-controls="navbar">
+						aria-expanded="false" aria-controls="navbar" id="toggleHamburger">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -14,8 +14,8 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<router-link tag="li" to="/references"><a v-bind:data-toggle="{'collapse': $mq.below($mv.sm)}" data-target="#navbar">References</a></router-link>
-					<router-link to="/internet/beginning" tag="li"><a v-bind:data-toggle="{'collapse': $mq.below($mv.sm)}" data-target="#navbar">History of the Internet</a></router-link>
+					<router-link tag="li" to="/references"><a v-bind:data-toggle="{collapse: $mq.below($mv.sm)}" data-target="#navbar">References</a></router-link>
+					<router-link to="/internet/beginning" tag="li"><a v-bind:data-toggle="{collapse: $mq.below($mv.sm)}" data-target="#navbar">History of the Internet</a></router-link>
 				</ul>
 				<div class="navbar-right navbarForm">
 					<form class="form-inline" @submit.prevent="validateForm">
@@ -85,6 +85,10 @@
 		#submitToWiki {
 			margin-top: 5px;
 			text-align: center;
+		}
+		#toggleHamburger{
+			position: fixed;
+			left: 200px;
 		}
 	}
 </style>
