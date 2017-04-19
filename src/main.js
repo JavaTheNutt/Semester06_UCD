@@ -14,6 +14,7 @@ require('./vendor');
 Vue.use(Logger);
 Vue.use(MediaQuery, {
 	variables: {
+		xs: '500px',
 		sm: '768px',
 		md: '992px',
 		lg: '1200px'

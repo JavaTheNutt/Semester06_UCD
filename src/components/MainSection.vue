@@ -11,7 +11,7 @@
 																				   v-bind:class="{'fa-arrow-left' : navLinksManuallyShown, 'fa-arrow-right': !navLinksManuallyShown}"></i>
 				</button>
 			</div>
-			<div v-bind:class="{'col-xs-11' : hasNavLinks, 'col-xs-12': !hasNavLinks}">
+			<div v-bind:class="{'col-xs-10' : hasNavLinks, 'col-xs-12': !hasNavLinks}">
 				<router-view></router-view>
 			</div>
 		</div>
@@ -32,7 +32,7 @@
 			showUnderConstruction: 'showConstruction'
 		}),
 		watch:{
-			'$route'(){ this.navLinksManuallyShown = true}
+			'$route'(){ this.navLinksManuallyShown = false}
 		},
 		data() {
 			return {
