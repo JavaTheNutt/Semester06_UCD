@@ -45,6 +45,7 @@
 		background-color: white;
 		margin-bottom: 70px;
 		margin-top: 0;
+		padding: 10px;
 	}
 
 	.construction {

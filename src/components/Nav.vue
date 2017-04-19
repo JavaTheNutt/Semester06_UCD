@@ -9,13 +9,13 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<router-link to="/" class="navbar-brand"><i class="fa fa-home"></i><span class="sr-only">home</span>
+				<router-link to="/" class="navbar-brand" @click="collapseNav"><i class="fa fa-home"></i><span class="sr-only">home</span>
 				</router-link>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<router-link tag="li" to="/references"><a>References</a></router-link>
-					<router-link to="/internet/beginning" tag="li"><a>History of the Internet</a></router-link>
+					<router-link tag="li" to="/references"><a v-bind:data-toggle="{'collapse': $mq.below($mv.sm)}" data-target="#navbar">References</a></router-link>
+					<router-link to="/internet/beginning" tag="li"><a v-bind:data-toggle="{'collapse': $mq.below($mv.sm)}" data-target="#navbar">History of the Internet</a></router-link>
 				</ul>
 				<div class="navbar-right navbarForm">
 					<form class="form-inline" @submit.prevent="validateForm">
@@ -31,6 +31,7 @@
 	</nav>
 </template>
 <script>
+	import $ from 'jquery';
 	export default{
 		name: 'navBar',
 		methods: {
@@ -41,10 +42,14 @@
 					this.$store.dispatch('retrieveArticles', search).then(() => {
 						this.$log.success('fetch articles promise resolved');
 						this.$store.dispatch('showArticles', true);
+						this.collapseNav();
 					}).catch((err) => {
 						this.$log.error("fetch articles promise rejected. Error:", err);
 					})
 				}
+			},
+			collapseNav(){
+				$('.navbar-collapse').collapse('hide');
 			}
 		},
 		data: function () {

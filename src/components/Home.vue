@@ -4,7 +4,7 @@
 		<p>
 			I created this website as part of my Year Three college project for my User Centred Design module. The
 			purpose of the assignment is to create an educational website that has a user-friendly feel. Please note
-			that this project is still under construction, if you find any bugs, <a href="mailto:javathenutt@gmail.com"
+			that this project is still under construction, if you find any bugs, <a href="mailto:support@javathenutt.com"
 																					target="_blank">please feel free to
 			submit them to me</a>. If you are a developer and you see issues, feel free to submit a <a
 				href="https://github.com/JavaTheNutt/Semester06_UCD/issues" target="_blank">GitHub Issue</a>, or
@@ -43,13 +43,7 @@
 </template>
 <script>
 	import bus from '../service/Bus';
-	const navLinks = [{
-		title: 'Welcome',
-		id: 'welcomeHeader'
-	}, {
-		title: 'Using the search bar',
-		id: 'searchBar'
-	}];
+
 	export default{
 		name: 'home',
 		data(){

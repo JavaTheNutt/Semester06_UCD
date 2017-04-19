@@ -150,4 +150,7 @@
 			margin-right: 0;
 		}
 	}
+	.content-section{
+		padding: 15px;
+	}
 </style>
