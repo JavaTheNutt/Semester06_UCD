@@ -16,6 +16,7 @@
 				<ul class="nav navbar-nav">
 					<router-link tag="li" to="/references"><a v-bind:data-toggle="{collapse: $mq.below($mv.sm)}" data-target="#navbar">References</a></router-link>
 					<router-link to="/internet/beginning" tag="li"><a v-bind:data-toggle="{collapse: $mq.below($mv.sm)}" data-target="#navbar">History of the Internet</a></router-link>
+					<router-link to="/www/beginning" tag="li"><a v-bind:data-toggle="{collapse: $mq.below($mv.sm)}" data-target="#navbar">History of the WWW</a></router-link>
 				</ul>
 				<div class="navbar-right navbarForm">
 					<form class="form-inline" @submit.prevent="validateForm">

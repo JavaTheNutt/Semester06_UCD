@@ -1,6 +1,6 @@
 <template>
 	<div class="bodyContainer">
-		<h1 class="text-center">DARPA Net</h1>
+		<h1 class="text-center">The Need for the World Wide Web</h1>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus, lorem nec auctor congue,
 			risus magna porta leo, venenatis mattis ipsum orci quis justo. In vel massa accumsan, ultrices felis quis,
@@ -56,9 +56,13 @@
 	</div>
 </template>
 <script>
-	import {internetLinks} from '../service/SidebarLinks';
+	import {wwwLinks} from '../service/SidebarLinks';
 	import bus from '../service/Bus';
 	export default{
-		name: 'darpa_net'
+		name: 'theNeedForTheWWW',
+		created(){
+			wwwLinks.forEach(link => this.$log.debug(link));
+			bus.$emit('set-nav-links', wwwLinks);
+		}
 	}
 </script>

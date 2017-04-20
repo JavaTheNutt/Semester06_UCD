@@ -31,8 +31,10 @@
 		computed: mapGetters({
 			showUnderConstruction: 'showConstruction'
 		}),
-		watch:{
-			'$route'(){ this.navLinksManuallyShown = false}
+		watch: {
+			'$route'(){
+				this.navLinksManuallyShown = false;
+			}
 		},
 		data() {
 			return {
@@ -51,6 +53,7 @@
 		methods: {
 			screenResize(isInitial){
 				let showNav = this.$mq.above(this.$mv.sm);
+				this.$log.debug('screen resize called from main section', showNav);
 				if (isInitial) {
 					this.navLinksManuallyShown = false;
 				}

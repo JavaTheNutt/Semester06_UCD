@@ -5,6 +5,9 @@ import Home from '../components/Home.vue';
 import References from '../components/References.vue';
 import InternetBeginning from '../components/InternetBeginning.vue';
 import DarpaNet from '../components/DarpaNet.vue';
+import WWWBeginning from '../components/WWWBeginning.vue';
+import HtmlHttp from '../components/HtmlHttp.vue';
+import www from './www';
 
 Vue.use(Router);
 
@@ -24,7 +27,16 @@ const routes = [{
 	path: '/internet/darpa_net',
 	name: 'darpa_net',
 	component: DarpaNet
+},{
+	path: '/www/beginning',
+	name: 'www_beginning',
+	component: WWWBeginning
+}, {
+	path: '/www/html_http',
+	name: 'html_http',
+	component: HtmlHttp
 }];
+//routes.concat(www);
 export default new Router({
 	routes,
 	activeClass: 'active'

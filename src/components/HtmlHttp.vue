@@ -1,6 +1,6 @@
 <template>
 	<div class="bodyContainer">
-		<h1 class="text-center">DARPA Net</h1>
+		<h1 class="text-center">HTML and HTTP</h1>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus, lorem nec auctor congue,
 			risus magna porta leo, venenatis mattis ipsum orci quis justo. In vel massa accumsan, ultrices felis quis,
@@ -53,12 +53,16 @@
 			Duis vel dolor mi. Sed ac erat sodales, pellentesque purus nec, faucibus nisl. Vestibulum hendrerit eget ante vitae
 			posuere. Integer molestie id nisl et commodo.
 		</p>
+		<p></p>
 	</div>
 </template>
 <script>
-	import {internetLinks} from '../service/SidebarLinks';
+	import {wwwLinks} from '../service/SidebarLinks';
 	import bus from '../service/Bus';
 	export default{
-		name: 'darpa_net'
+		name: 'html_http',
+		created(){
+			bus.$emit('setNavLinks', wwwLinks);
+		}
 	}
 </script>
