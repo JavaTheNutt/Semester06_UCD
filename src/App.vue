@@ -59,5 +59,11 @@
 	.centerHeader {
 		text-align: center;
 	}
+	h1{
+		font-family: 'PT Serif', serif;
+	}
+	p{
+		font-family: 'Open Sans', sans-serif;
+	}
 
 </style>

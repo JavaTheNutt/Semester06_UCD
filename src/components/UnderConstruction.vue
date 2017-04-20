@@ -8,6 +8,15 @@
 				</button>
 				<img src="/assets/under-construction-sign.jpg" alt="under construction" id="warningImage">
 			</div>
+			<div v-if="$mq.below($mv.xs)" class="container">
+				<div class="bodyContainer">
+					<p>
+						I am sorry, but some features of this site are not optimised for mobile yet, and it appears that
+						you are on a mobile device. Some functionality may not work as intended. For a better user experience,
+						please visit this site on a computer. I am sorry for any inconvenience.
+					</p>
+				</div>
+			</div>
 		</div>
 	</transition>
 </template>

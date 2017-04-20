@@ -7,7 +7,6 @@ import InternetBeginning from '../components/InternetBeginning.vue';
 import DarpaNet from '../components/DarpaNet.vue';
 import WWWBeginning from '../components/WWWBeginning.vue';
 import HtmlHttp from '../components/HtmlHttp.vue';
-import www from './www';
 
 Vue.use(Router);
 
@@ -36,7 +35,7 @@ const routes = [{
 	name: 'html_http',
 	component: HtmlHttp
 }];
-//routes.concat(www);
+
 export default new Router({
 	routes,
 	activeClass: 'active'
